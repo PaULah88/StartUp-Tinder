@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@200;300;400;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.register-title {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 4rem;
+    font-weight: bolder;
+    color: #1b334f;
+}
+
+.header-a {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#btn-language {
+    text-decoration: none;
+    color: rgb(33, 37, 105);
+    border: none;
+    margin: 0;
+    padding: 10px;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#btn-language:hover {
+    color: rgba(238, 143, 238, 0.8);
+    transition: .4s;
+}
+
+.register-container {
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 40px 0;
+    min-height: 80vh;
+}
+
+.register-card {
+    padding: 3rem;
+}
+
+.hover-img {
+    background-color: #000;
+    color: #fff;
+    margin: 8px;
+    max-width: 500px;
+    min-width: 340px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgb(202, 93, 69);
+}
+
+.hover-img * {
+    box-sizing: border-box;
+    transition: all 0.45s ease;
+}
+
+.hover-img::before,
+.hover-img::after {
+    background-color: rgb(243, 112, 51);
+    opacity: .70;
+    border-top: 32px solid rgb(243, 112, 51);
+    border-bottom: 32px solid rgb(243, 112, 51);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    transition: all 0.3s ease;
+    z-index: 1;
+    opacity: 0;
+    transform: scaleY(2);
+}
+
+.hover-img img {
+    vertical-align: top;
+    max-width: 100%;
+    backface-visibility: hidden;
+}
+
+.hover-img figcaption {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1em;
+    opacity: 0;
+    z-index: 2;
+    transition-delay: 0.1s;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hover-img:hover::before,
+.hover-img:hover::after {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.hover-img:hover>img {
+    opacity: 0.7;
+}
+
+.hover-img:hover figcaption {
+    opacity: 1;
+}

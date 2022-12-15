@@ -1,0 +1,171 @@
+<div class="container">
+    <div class="columns is-multiline">
+        <div class="column is-8 is-offset-2 register">
+            <div class="columns">
+                <div class="column left">
+                    <h1 class="title is-1">Rexistrate en StartUp!</h1>
+                    <h2 class="subtitle colored is-4">Startup ou inversor ?</h2>
+                    <div class="select is-rounded">
+                        <select [(ngModel)]="selectedOption">
+                            <option [selected]="o.value === ngSelect" *ngFor="let o of options" [value]="o.value">
+                                {{o.name}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Formulario de StartUp -->
+                <div class="column right has-text-centered" *ngIf="selectedOption === '1'">
+                    <h1 class="title is-4">Startup</h1>
+                    <p class="description">Complete o rexistro de Startup</p>
+
+                </div>
+
+                <!-- Formulario de Inversor -->
+                <div class="column right has-text-centered" *ngIf="selectedOption === '2'">
+                    <h1 class="title is-4">Inversor</h1>
+                    <p class="description">Complete o rexistro de inversor</p>
+                    <form>
+                        <div class="field">
+                            <div class="control">
+                                <input class="input  is-rounded is-medium" type="text" placeholder="Name">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <input class="input  is-rounded is-medium" type="email" placeholder="Email">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">{{ 'table.contacts.name' | translate }}</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input" type="text" placeholder="{{ 'table.contacts.name' | translate }}">
+                                <span class="icon is-small is-left">
+                                    <mat-icon>people</mat-icon>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">{{ 'table.contacts.email' | translate }}</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input" type="email"
+                                    placeholder="{{ 'table.contacts.email' | translate }}">
+                                <span class="icon is-small is-left">
+                                    <mat-icon>email</mat-icon>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="field is-grouped  has-icons-left">
+                            <div class="control has-icons-left">
+                                <div class="field">
+                                    <label class="label">{{"table.inversores.idInvesterRange" | translate}}</label>
+                                    <div class="control">
+                                        <div class="select">
+                                            <select>
+                                                <option></option>
+                                            </select>
+                                            <span class="icon is-small is-left">
+                                                <mat-icon>list</mat-icon>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="control  has-icons-left">
+                                <div class="field">
+                                    <label class="label">{{"table.inversores.idBusinessSector" | translate}}</label>
+                                    <div class="control">
+                                        <div class="select">
+                                            <select>
+                                                <option></option>
+                                            </select>
+                                            <span class="icon is-small is-left">
+                                                <mat-icon>list</mat-icon>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="control  has-icons-left">
+                                <div class="field">
+                                    <label class="label">{{"table.inversores.idStartUpState" | translate}}</label>
+                                    <div class="control">
+                                        <div class="select">
+                                            <select>
+                                                <option></option>
+                                            </select>
+                                            <span class="icon is-small is-left">
+                                                <mat-icon>list</mat-icon>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <mat-dialog-actions>
+                            <div class="field is-grouped is-centered">
+                                <div class="control">
+                                    <button type="submit" class="button is-link">{{ 'button.save' | translate
+                                        }}</button>
+                                </div>
+
+                                <div class="control">
+                                    <button mat-dialog-close class="button is-danger">{{"button.cancel" |
+                                        translate}}</button>
+                                </div>
+                            </div>
+                        </mat-dialog-actions>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="column is-8 is-offset-2">
+            <br>
+            <nav class="level">
+                <div class="level-left">
+                    <div class="level-item">
+                        <span class="icon">
+                            <i class="fab fa-twitter"></i>
+                        </span> &emsp;
+                        <span class="icon">
+                            <i class="fab fa-facebook"></i>
+                        </span> &emsp;
+                        <span class="icon">
+                            <i class="fab fa-instagram"></i>
+                        </span> &emsp;
+                        <span class="icon">
+                            <i class="fab fa-github"></i>
+                        </span> &emsp;
+                        <span class="icon">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="level-right">
+                    <small class="level-item" style="color: var(--textLight)">
+                        &copy; StartUp! Website. All Rights Reserved.
+                    </small>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function ShowSelected() {
+        /* Para obtener el valor */
+        var cod = document.getElementById("type").value;
+        alert(cod);
+
+        /* Para obtener el texto */
+        var combo = document.getElementById("type");
+        var selected = combo.options[combo.selectedIndex].text;
+        alert(selected);
+    }
+</script>

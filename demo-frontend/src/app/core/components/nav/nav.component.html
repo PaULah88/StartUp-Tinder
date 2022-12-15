@@ -1,0 +1,67 @@
+<mat-sidenav-container>
+    <h2 class="logo">Start<span class="up">Up</span>!</h2>
+    <mat-sidenav class="mat-elevation-z8" #navigationSidenav mode="over" role="navigation">
+        <img class="avatar mat-elevation-z8" src="https://avatars.dicebear.com/api/initials/{{ userName }}.svg" />
+        <h4 class="name">{{userName}}</h4>
+
+
+        <mat-divider></mat-divider>
+
+        <mat-nav-list>
+            <button class="menu-button" mat-list-item routerLink="/" style="height: 0"></button>
+            <button class="menu-button" *ngFor="let item of allowedRoutes" mat-list-item
+                (click)="navigationSidenav.close()" [routerLink]="[item.route]" routerLinkActive="list-item-active">
+                <mat-icon matListIcon>
+                    {{ item.icon }}
+                </mat-icon>
+                {{ item.title | translate }}
+            </button>
+
+        </mat-nav-list>
+        <mat-divider></mat-divider>
+        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+            <li fxHide.xs>
+                <a rel="noopener noreferrer" mat-icon-button href="https://www.imatia.com/" target="_blank">
+                    <mat-icon>help_outline</mat-icon>
+                </a>
+            </li>
+
+            <li>
+                <button mat-icon-button [matMenuTriggerFor]="language">
+                    <mat-icon matBadge="{{ selectedLanguage }}">language</mat-icon>
+                </button>
+                <mat-menu #language="matMenu">
+                    <button mat-menu-item (click)="toogleLanguage('es')">
+                        <span class="language-menu">{{ "language.spanish" | translate }}</span>
+                    </button>
+                    <button mat-menu-item (click)="toogleLanguage('gl')">
+                        <span class="language-menu">{{ "language.galician" | translate }}</span>
+                    </button>
+                    <button mat-menu-item (click)="toogleLanguage('en')">
+                        <span class="language-menu">{{ "language.english" | translate }}</span>
+                    </button>
+                </mat-menu>
+            </li>
+
+            <li class="logout-menu">
+                <button mat-icon-button [matMenuTriggerFor]="auth">
+                    <mat-icon>person_outline</mat-icon>
+                </button>
+                <mat-menu #auth="matMenu">
+                    <strong class="logout-menu" matSubheader>{{ userName }}</strong>
+                    <button class="logout-menu" mat-menu-item (click)="logout()">
+                        <mat-icon>exit_to_app</mat-icon>
+                        <span class="logout-menu span-logout">{{ "menu.logout" | translate }}</span>
+                    </button>
+                </mat-menu>
+            </li>
+        </ul>
+    </mat-sidenav>
+
+    <mat-sidenav-content role="main" class="color-back">
+        <app-navigation-bar *ngIf="isAuthenticated()" (toggleSidenav)="navigationSidenav.toggle()"></app-navigation-bar>
+        <div [ngClass]="{ 'page-content': isAuthenticated() }">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

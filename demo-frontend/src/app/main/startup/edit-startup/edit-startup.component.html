@@ -1,0 +1,200 @@
+<!-- <form [formGroup]="startupForm" (ngSubmit)="save()" class="row g-3">
+  <div class="col-3">
+    <label for="inputPassword4" class="form-label">Name</label>
+    <input type="text" class="form-control" placeholder="{{ 'table.startup.name' | translate }}" formControlName="name"
+      name="startup-name" required>
+  </div>
+    <div class="col-3">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input formControlName="email" type="email" placeholder="{{ 'table.startup.email' | translate }}"
+        class="form-control" id="inputEmail4">
+    </div>
+
+    <div class="col-6">
+      <label for="inputDescription" class="form-label">Description</label>
+      <input formControlName="description" type="description" placeholder="{{ 'table.startup.description' | translate }}"
+        class="form-control">
+    </div>
+
+    <div class="col-3">
+      <label for="idBusinessSector" class="form-label">Business Sector</label>
+      <select name="idBusinessSector" id="idBusinessSector" class="form-select" formControlName="idBusinessSector">
+          <option *ngFor="let businessSector of businessSectors" [value]="businessSector">{{businessSector.type}}</option>
+      </select>
+    </div>
+    <div class="col-3">
+      <label for="idStartupState" class="form-label">State</label>
+      <select name="idStartupState" id="idStartupState" class="form-select" formControlName="idStartupState">
+          <option *ngFor="let startupState of startupStates" [value]="startupState" >{{startupState.type}}</option>
+      </select>
+    </div>
+
+    <div class="col-3">
+      <label for="inputDescription" class="form-label">Anual Invoicing</label>
+      <input formControlName="anualInvoicing" type="anualInvoicing" placeholder="{{ 'table.startup.anualInvoicing' | translate }}"
+        class="form-control">
+    </div>
+
+        <div class="col-3">
+      <label for="inputEr" class="form-label">Entrepreneur</label>
+      <select id="inputEr" class="form-select" formControlName="idEntrepreneur">
+        <option *ngFor="let entrepreneur of entrepreneurs" [value]="entrepreneur">{{entrepreneur.firstName}}</option>
+      </select>
+    </div>
+<div class="col-md-4 .ml-auto">
+    <div class="col-3">
+      <mat-form-field appearance="fill">
+        <input matInput [matDatepicker]="picker" formControlName="fundationYear" type="fundationYear" placeholder="{{ 'table.startup.fundationYear' | translate }}"
+        class="form-control">
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+</div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary" [disabled]="!startupForm">{{ 'button.save' | translate
+        }}</button>
+    </div>
+  </form> -->
+
+
+<form [formGroup]="startupForm" (ngSubmit)="save()" class="box">
+
+  <!-- name -->
+  <div class="field">
+    <label class="label">{{ 'table.contacts.name' | translate }}</label>
+    <div class="control has-icons-left has-icons-right">
+      <input type="text" class="input" placeholder="{{ 'table.startup.name' | translate }}" formControlName="name"
+        name="startup-name" required>
+      <span class="icon is-small is-left">
+        <mat-icon>person</mat-icon>
+      </span>
+    </div>
+  </div>
+
+  <!-- email -->
+  <div class="field">
+    <label class="label">{{ 'table.contacts.email' | translate }}</label>
+    <div class="control has-icons-left has-icons-right">
+      <input formControlName="email" type="email" placeholder="{{ 'table.startup.email' | translate }}" class="input">
+      <span class="icon is-small is-left">
+        <mat-icon>email</mat-icon>
+      </span>
+    </div>
+  </div>
+
+
+  <!-- decripcion -->
+  <div class="field">
+    <label class="label">{{ 'table.startup.description' | translate }}</label>
+    <div class="control has-icons-left has-icons-right">
+      <textarea formControlName="description" type="text" placeholder="{{ 'table.startup.description' | translate }}"
+        class="textarea"></textarea>
+      <span class="icon is-small is-right">
+        <mat-icon>notes</mat-icon>
+      </span>
+    </div>
+  </div>
+
+  <div class="field is-grouped has-icons-left">
+
+    <!-- INGRESOS ANUAIS -->
+    <div class="control  has-icons-left">
+      <div class="field">
+        <label class="label">{{ 'table.startup.anualInvoicing' | translate }}</label>
+        <div class="control has-icons-left has-icons-right">
+          <input formControlName="anualInvoicing" type="number"
+            placeholder="{{ 'table.startup.anualInvoicing' | translate }}" class="input">
+          <span class="icon is-small is-left">
+            <mat-icon>attach_money</mat-icon>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- fundationYear-->
+    <div class="control  has-icons-left">
+      <div class="field">
+        <label class="label">{{ 'table.startup.fundationYear' | translate }}</label>
+        <div class="control has-icons-left has-icons-right">
+          <input formControlName="fundationYear" type="date" class="input">
+          <span class="icon is-small is-left">
+            <mat-icon>date_range</mat-icon>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- grupo drop -->
+  <div class="field is-grouped  has-icons-left">
+
+    <div class="control  has-icons-left">
+      <div class="field">
+        <label class="label">{{"table.startup.idBusinessSector" | translate}}</label>
+        <div class="control">
+          <div class="select">
+            <select formControlName="idBusinessSector">
+              <option *ngFor="let businessSector of businessSectors" [ngValue]="businessSector">{{businessSector.type}}
+              </option>
+            </select>
+            <span class="icon is-small is-left">
+              <mat-icon>list</mat-icon>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- idStartupState -->
+    <div class="control  has-icons-left">
+      <div class="field">
+        <label class="label">{{"table.startup.idStartUpState" | translate}}</label>
+        <div class="control">
+          <div class="select">
+            <select formControlName="idStartupState">
+              <option *ngFor="let startupState of startupStates" [ngValue]="startupState">{{startupState.type}}</option>
+            </select>
+            <span class="icon is-small is-left">
+              <mat-icon>list</mat-icon>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="control  has-icons-left">
+      <div class="field">
+        <label class="label">{{"table.startup.idEntrepreneur" | translate}}</label>
+        <div class="control">
+          <div class="select">
+            <select formControlName="idEntrepreneur">
+              <option *ngFor="let entrepreneur of entrepreneurs" [ngValue]="entrepreneur">{{entrepreneur.firstName}}
+              </option>
+            </select>
+            <span class="icon is-small is-left">
+              <mat-icon>people</mat-icon>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-card-actions>
+    <div class="field is-grouped">
+      <div class="control">
+        <button type="submit" class="button is-link">{{ 'button.save' | translate
+          }}</button>
+      </div>
+
+      <div class="control">
+        <button (click)="cancel()" [formNoValidate]="true" mat-dialog-close class="button is-danger">{{"button.cancel" |
+          translate}}</button>
+      </div>
+    </div>
+  </mat-card-actions>
+</form>

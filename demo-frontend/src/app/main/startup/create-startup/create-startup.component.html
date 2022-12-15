@@ -1,0 +1,139 @@
+<form [formGroup]="startupForm" (ngSubmit)="save()">
+
+  <!-- name -->
+  <div class="field">
+    <label class="label">{{ 'table.contacts.name' | translate }}</label>
+    <div class="control has-icons-left has-icons-right">
+      <input type="text" class="input" placeholder="{{ 'table.startup.name' | translate }}" formControlName="name"
+        name="startup-name" required>
+      <span class="icon is-small is-left">
+        <mat-icon>person</mat-icon>
+      </span>
+    </div>
+  </div>
+
+  <!-- email -->
+  <div class="field">
+    <label class="label">{{ 'table.contacts.email' | translate }}</label>
+    <div class="control has-icons-left has-icons-right">
+      <input formControlName="email" type="email" placeholder="{{ 'table.startup.email' | translate }}" class="input">
+      <span class="icon is-small is-left">
+        <mat-icon>email</mat-icon>
+      </span>
+    </div>
+  </div>
+
+
+  <!-- decripcion -->
+  <div class="field">
+    <label class="label">{{ 'table.startup.description' | translate }}</label>
+    <div class="control has-icons-left has-icons-right">
+      <textarea formControlName="description" type="text" placeholder="{{ 'table.startup.description' | translate }}"
+        class="textarea"></textarea>
+      <span class="icon is-small is-right">
+        <mat-icon>notes</mat-icon>
+      </span>
+    </div>
+  </div>
+
+  <div class="field is-grouped has-icons-left">
+
+    <!-- INGRESOS ANUAIS -->
+    <div class="control  has-icons-left">
+      <div class="field">
+        <label class="label">{{ 'table.startup.anualInvoicing' | translate }}</label>
+        <div class="control has-icons-left has-icons-right">
+          <input formControlName="anualInvoicing" type="number"
+            placeholder="{{ 'table.startup.anualInvoicing' | translate }}" class="input">
+          <span class="icon is-small is-left">
+            <mat-icon>attach_money</mat-icon>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- fundationYear-->
+    <div class="control  has-icons-left">
+      <div class="field">
+        <label class="label">{{ 'table.startup.fundationYear' | translate }}</label>
+        <div class="control has-icons-left has-icons-right">
+          <input formControlName="fundationYear" type="date"
+            placeholder="{{ 'table.startup.fundationYear' | translate }}" class="input">
+          <span class="icon is-small is-left">
+            <mat-icon>date_range</mat-icon>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- grupo drop -->
+  <div class="field is-grouped  has-icons-left">
+
+    <div class="control  has-icons-left">
+      <div class="field">
+        <label class="label">{{"table.startup.idBusinessSector" | translate}}</label>
+        <div class="control">
+          <div class="select">
+            <select formControlName="idBusinessSector">
+              <option *ngFor="let businessSector of businessSectors"
+                [ngValue]="{id:businessSector.id,value:businessSector.type}">{{businessSector.type}}</option>
+            </select>
+            <span class="icon is-small is-left">
+              <mat-icon>list</mat-icon>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="control  has-icons-left">
+      <div class="field">
+        <label class="label">{{"table.startup.idStartUpState" | translate}}</label>
+        <div class="control">
+          <div class="select">
+            <select formControlName="idStartupState">
+              <option *ngFor="let startupState of startupStates"
+                [ngValue]="{id:startupState.id,value:startupState.type}">{{startupState.type}}</option>
+            </select>
+            <span class="icon is-small is-left">
+              <mat-icon>list</mat-icon>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="control  has-icons-left">
+      <div class="field">
+        <label class="label">{{"table.startup.idEntrepreneur" | translate}}</label>
+        <div class="control">
+          <div class="select">
+            <select formControlName="idEntrepreneur">
+              <option *ngFor="let entrepreneur of entrepreneurs" [ngValue]="{id:entrepreneur.id,value:entrepreneur.id}">
+                {{entrepreneur.firstName+" "+entrepreneur.lastName}}</option>
+            </select>
+            <span class="icon is-small is-left">
+              <mat-icon>people</mat-icon>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-dialog-actions>
+    <div class="field is-grouped">
+      <div class="control">
+        <button type="submit" [disabled]="!startupForm.valid" class="button is-link">{{ 'button.save' | translate
+          }}</button>
+      </div>
+
+      <div class="control">
+        <button mat-dialog-close class="button is-danger">{{"button.cancel" | translate}}</button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</form>

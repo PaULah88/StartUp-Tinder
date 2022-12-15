@@ -1,0 +1,51 @@
+<header class="headers">
+    <p>{{'landing.service.investor.p' | translate}}</p>
+</header>
+
+<div class="wrapper">
+
+
+    <div class="testimotionals" *ngFor="let inversor of inversores | paginate: { itemsPerPage: 6, currentPage: page }">
+        <div class="card ">
+
+            <div class="layer">
+
+            </div>
+
+            <div class="content">
+                <h2 class="transition name">{{inversor.name}}</h2>
+                <div class="linea"></div>
+
+
+
+                <div class="details">
+
+                    <p id="sector">{{inversor.idBusinessSector.type}}</p>
+                    <p class="range">&#36;&nbsp; {{inversor.idInvesterRange.value }}</p>
+                    <p>
+                        <progress [ngClass]="{
+                        'is-success':  inversor.idStartUpState.type === 'Scaleup',
+                        'is-warning': inversor.idStartUpState.type === 'Seed',
+                        'is-danger': inversor.idStartUpState.type === 'Pre-Seed',
+                        'is-link':  inversor.idStartUpState.type === 'Early Stage',
+                        'is-primary':  inversor.idStartUpState.type === 'Exit',
+                        'is-info':  inversor.idStartUpState.type === 'Growth Stage'
+                      }" class="progress is-small" [value]="changeProgresValue( inversor.idStartUpState.type)" max="100"></progress> {{inversor.idStartUpState.type}}
+                    </p>
+
+                    <div class="linea2"></div>
+                    <p class="email">{{inversor.email}}</p>
+                    <button (click)="onclick()" (click)="onSelected(inversor)" type="button" class="button">{{'landing.service.investor.a' |translate}}</button>
+
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<pagination-controls nextLabel="" previousLabel="" class="pagination" (pageChange)="page = $event"></pagination-controls>

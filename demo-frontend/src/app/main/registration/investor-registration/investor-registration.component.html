@@ -1,0 +1,80 @@
+<form [formGroup]="inversorForm" (ngSubmit)="save()">
+  <div class="field">
+    <label class="label">{{ 'table.contacts.name' | translate }}</label>
+    <div class="control has-icons-left has-icons-right">
+      <input formControlName="name" class="input is-rounded" type="text" placeholder="{{ 'table.contacts.name' | translate }}">
+      <span class="icon is-small is-left">
+        <mat-icon>people</mat-icon>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">{{ 'table.contacts.email' | translate }}</label>
+    <div class="control has-icons-left has-icons-right">
+      <input formControlName="email" class="input is-rounded" type="email" placeholder="{{ 'table.contacts.email' | translate }}">
+      <span class="icon is-small is-left">
+        <mat-icon>email</mat-icon>
+      </span>
+    </div>
+  </div>
+
+  <div class="field is-grouped  has-icons-left">
+    <div class="control has-icons-left">
+      <div class="field">
+        <label class="label">{{"table.inversores.idInvesterRange" | translate}}</label>
+        <div class="control">
+          <div class="select is-rounded">
+            <select formControlName="idInvesterRange">
+              <option *ngFor="let rangeInvester of rangeInvesters"
+                [ngValue]="{id:rangeInvester.id,value:rangeInvester.value}">{{rangeInvester.value}}</option>
+            </select>
+            <span class="icon is-small is-left">
+              <mat-icon>list</mat-icon>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="control  has-icons-left">
+      <div class="field">
+        <label class="label">{{"table.inversores.idBusinessSector" | translate}}</label>
+        <div class="control">
+          <div class="select is-rounded">
+            <select formControlName="idBusinessSector">
+              <option *ngFor="let businessSector of businessSectors" [ngValue]="businessSector">{{businessSector.type}}
+            </select>
+            <span class="icon is-small is-left">
+              <mat-icon>list</mat-icon>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="control  has-icons-left">
+      <div class="field">
+        <label class="label">{{"table.inversores.idStartUpState" | translate}}</label>
+        <div class="control">
+          <div class="select is-rounded">
+            <select formControlName="idStartUpState">
+              <option *ngFor="let startupState of startupStates"
+                [ngValue]="{id:startupState.id,value:startupState.type}">{{startupState.type}}</option>
+            </select>
+            <span class="icon is-small is-left">
+              <mat-icon>list</mat-icon>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-dialog-actions>
+
+    <button type="submit" [disabled]="!inversorForm.valid" class="button is-rounded is-fullwidth">{{ 'button.save' |
+      translate
+      }}</button>
+
+  </mat-dialog-actions>
+</form>

@@ -1,0 +1,54 @@
+<header class="headers">
+    <p>{{ "landing.service.startup.p" | translate }}</p>
+</header>
+
+<div class="wrapper">
+    <div class="testimotionals" *ngFor="
+      let startup of startups | paginate: { itemsPerPage: 6, currentPage: page }
+    ">
+        <div class="card">
+            <div class="layer"></div>
+
+            <div class="content">
+                <h2 class="transition name">{{ startup.name }}</h2>
+                <div class="linea"></div>
+
+                <div class="details">
+                    <p id="sector">{{ startup.idBusinessSector.type }}</p>
+
+                    <p>
+                        <progress [ngClass]="{
+                'is-success': startup.idStartupState.type === 'Scaleup',
+                'is-warning': startup.idStartupState.type === 'Seed',
+                'is-danger': startup.idStartupState.type === 'Pre-Seed',
+                'is-link': startup.idStartupState.type === 'Early Stage',
+                'is-primary': startup.idStartupState.type === 'Exit',
+                'is-info': startup.idStartupState.type === 'Growth Stage'
+              }" class="progress is-small" [value]="changeProgresValue(startup.idStartupState.type)" max="100"></progress> {{ startup.idStartupState.type }}
+                    </p>
+
+                    <div class="anual-year">
+                        <p>{{ startup.anualInvoicing | currency: "USD" }}</p>
+
+                        <p>{{ startup.fundationYear | date: "dd/MM/yy" }}</p>
+                    </div>
+
+                    <hr />
+
+                    <p class="description">{{ startup.description }}</p>
+                    <div class="linea2"></div>
+
+                    <p>{{ startup.idEntrepreneur.firstName }}</p>
+                    <p>{{ startup.email }}</p>
+                    <button (click)="onSelected(startup)" type="button" class="button">
+                        {{'landing.service.startup.a' |translate}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<pagination-controls nextLabel="" previousLabel="" (pageChange)="page = $event" class="pagination">
+</pagination-controls>

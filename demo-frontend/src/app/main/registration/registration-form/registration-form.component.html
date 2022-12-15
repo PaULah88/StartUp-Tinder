@@ -1,0 +1,197 @@
+<mat-horizontal-stepper animationDuration="1000ms" [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form (ngSubmit)="save()" [formGroup]="firstFormGroup">
+
+            <ng-template matStepLabel>{{"registration.matStepLabel1" | translate}}</ng-template>
+
+            <h1 class="title is-1">{{"registration.h1-step1" | translate}}</h1>
+            <h2 class="subtitle colored is-4">{{"registration.subtitle-step1" | translate}}</h2>
+
+            <!-- username -->
+            <div class="field is-grouped ">
+                <div class="control">
+                    <div class="field">
+                        <label class="label">{{"formUser.username" | translate}}</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input required formControlName="login" class="input is-rounded" type="text">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user-circle"></i>
+                                <mat-error *ngIf="firstFormGroup.invalid">{{'OBLIGATORY_FIELD'| translate}}</mat-error>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- name -->
+                <div class="control">
+                    <div class="field">
+                        <label class="label">{{"formUser.name" | translate}}</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="name" class="input is-rounded" type="text">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-grouped ">
+                <div class="control">
+                    <div class="field">
+                        <label class="label">{{"formUser.firstSurname" | translate}}</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="surname1" class="input is-rounded" type="text">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user-edit"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="control">
+                    <div class="field">
+                        <label class="label">{{"formUser.secondSurname" | translate}}</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="surname2" class="input is-rounded" type="text">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user-edit"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-grouped ">
+                <div class="control">
+                    <div class="field">
+                        <label class="label">{{"formUser.password" | translate}}</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input required formControlName="password" class="input is-rounded" type="password">
+                            <span class="icon is-small is-left">
+                                <mat-icon>lock</mat-icon>
+                                <mat-error *ngIf="firstFormGroup.invalid">{{'OBLIGATORY_FIELD'| translate}}</mat-error>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="control">
+                    <div class="field">
+                        <label class="label">{{"formUser.repeatPassword" | translate}}</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input required class="input is-rounded" type="password">
+
+                            <span class="icon is-small is-left">
+                                <mat-icon>lock</mat-icon>
+                                <mat-error *ngIf="firstFormGroup.invalid">{{'OBLIGATORY_FIELD'| translate}}</mat-error>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <mat-divider></mat-divider>
+
+            <div class="field">
+                <label class="label">{{"formUser.selectProfile" | translate}}</label>
+                <div class="control has-icons-left">
+                    <div class="select is-rounded">
+                        <select formControlName="profiles">
+                            <option *ngFor="let o of profilesOption" [ngValue]="[{id:o.value}]">
+                                {{o.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="icon is-small is-left">
+                        <i class="fas fa-list"></i>
+                        <mat-error *ngIf="firstFormGroup.invalid">{{'OBLIGATORY_FIELD'| translate}}</mat-error>
+                    </div>
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+            <button [disabled]="!firstFormGroup.valid" class="button medium mgb-medium is-rounded is-medium"
+                type="submit" matStepperNext>
+                <span>{{"registration.button-next" | translate}}</span>
+                <span class="icon is-small">
+                    <i class="fas fa-arrow-right"></i>
+                </span></button>
+        </form>
+    </mat-step>
+
+    <!-- SEGUNDO PASO -->
+    <mat-step [stepControl]="secondFormGroup">
+        <ng-template matStepLabel>{{"registration.matStepLabel2" | translate}}</ng-template>
+
+        <h1 class="title is-1">{{"registration.h1-step2" | translate}}</h1>
+        <h2 class="subtitle colored is-4">{{"registration.subtitle-step2" | translate}}</h2>
+        <div class="select is-rounded">
+            <select [(ngModel)]="selectedOption">
+                <option [selected]="o.value === ngSelect" *ngFor="let o of options" [value]="o.value">
+                    {{o.name}}
+                </option>
+            </select>
+        </div>
+
+
+        <app-startup-registration [formGroup]="secondFormGroup" class="py-4" *ngIf="selectedOption === '1'">
+        </app-startup-registration>
+        <app-investor-registration [formGroup]="secondFormGroup" class="py-4" *ngIf="selectedOption === '2'">
+        </app-investor-registration>
+
+        <mat-divider></mat-divider>
+
+
+        <div class="field is-grouped py-4">
+            <div class="control">
+                <button class="button is-rounded is-medium" matStepperPrevious>
+                    <span class="icon is-small">
+                        <i class="fas fa-arrow-left"></i>
+                    </span>
+                    <span>{{"registration.button-back" | translate}}</span>
+                </button>
+            </div>
+            <div class="control">
+                <button type="submit" class="button is-rounded is-medium" [disabled]="!selectedOption" matStepperNext>
+                    <span>{{"registration.button-next" | translate}}</span>
+                    <span class="icon is-small">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>{{"registration.matStepLabel3" | translate}}</ng-template>
+        <h2 class="subtitle colored is-4">{{"registration.done-messafge" | translate}}</h2>
+        <mat-list>
+            <mat-list-item> <strong>{{"registration.done-username" | translate}}</strong>&nbsp; {{
+                this.firstFormGroup.value.login }}</mat-list-item>
+            <mat-list-item> <strong>{{"registration.done-name" | translate}}</strong>&nbsp; {{
+                this.firstFormGroup.value.name }}</mat-list-item>
+            <mat-list-item> <strong>{{"registration.done-surname" | translate}}</strong>&nbsp; {{
+                this.firstFormGroup.value.surname1 }}&nbsp;{{
+                this.firstFormGroup.value.surname2 }} </mat-list-item>
+
+        </mat-list>
+        <div class="field is-grouped py-4">
+
+            <div class="control">
+                <button mat-dialog-close class="button is-rounded is-medium" matStepperPrevious>
+                    <span class="icon is-small">
+                        <i class="fas fa-check"></i>
+                    </span>
+                    <span>{{"registration.button-finish" | translate}}</span>
+                </button>
+            </div>
+
+            <div class="control">
+                <button class="button is-rounded is-medium" (click)="stepper.reset()">
+                    <span>{{"registration.button-reset" | translate}}</span>
+                    <span class="icon is-small">
+                        <mat-icon>clear_all</mat-icon>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>

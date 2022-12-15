@@ -1,0 +1,273 @@
+{
+    "landing": {
+        "sp": "Es",
+        "gl": "Ga",
+        "en": "In",
+
+        "aboutus": "Sobre nosotros",
+        "services": "Servicios",
+        "contact": "Contacto",
+        "loger": "Acceso",
+        "register": "Registrarse",
+        "content": {
+            "h4": "¡Hola, somos Tinder StartUp!",
+            "h1": "Próximamente",
+            "span": "...",
+            "h3": "Te damos oportunidades analizadas y cualificadas, tú decides cómo, cuándo y con quién"
+        },
+        "about": {
+            "h2": "Sobre nosotros",
+            "h5": "La red social de las",
+            "span": "¡StartUp!",
+            "p": "Somos una empresa que busca cambiar la forma de relacionarse entre emprendedores, inversores y startups. Aplicar la filosofía de las metodologías ágiles en las relaciones entre los miembros del ecosistema emprendedor."
+        },
+        "service": {
+            "h2": "Nuestros Servicios",
+            "startup": {
+                "h5": "Startup",
+                "p": "Estructura empresarial orientada a lograr un negocio escalable y repetible basado en tecnología e innovación.",
+                "a": "¡Haz Match!"
+            },
+            "investor": {
+                "h5": "Inversores",
+                "p": "Compromiso, resiliencia, flexibilidad, ejecución y visión son los valores más importantes que debe tener una startup según un inversor.",
+                "a": "¡Haz Match!"
+            },
+            "entrepreneur": {
+                "h5": "Emprendedores",
+                "p": "Emprendedor es quién con una idea innovadora, lleva a cabo por sus propios medios un proyecto en el que cree apasionadamente.",
+                "a": "¡Haz Match!"
+            }
+        },
+        "slogan": "¡Probablemente el mejor Tinder de todo mundo!",
+
+        "footer": {
+            "title": "StartUp!",
+            "p": "Para más información, contacte con nosotros...",
+            "end": "Derechos de autor: StartUp!"
+        }
+    },
+
+    "login": {
+        "user": "Usuario",
+        "password": "Contraseña",
+        "enter": "Entrar"
+    },
+    "item": {
+        "title": "Titulo"
+    },
+    "demo": {
+        "title": "StartUp!"
+    },
+    "menu": {
+        "home": "Home",
+        "contacts": "Contactos",
+        "investers": "Admin Inversores",
+        "entrepreneur": "Emprendedores",
+        "stadistics": "Estadísticas",
+        "logout": "Cerrar sesión",
+        "startup": "Admin Startup",
+        "startup-user": "Startup",
+        "investers-user": "Inversores"
+    },
+    "language": {
+        "spanish": "Español",
+        "galician": "Gallego",
+        "english": "Inglés"
+    },
+    "table": {
+        "contacts": {
+            "name": "Nombre",
+            "surname1": "Primer apellido",
+            "surname2": "Segundo apellido",
+            "phone": "Teléfono",
+            "email": "E-Mail"
+        },
+
+        "entrepreneur": {
+            "name": "Nombre",
+            "lastname": "apellidos",
+            "professionalProfile": "Perfil Profesional"
+        },
+        "inversores": {
+            "id": "id",
+            "name": "Nombre",
+            "email": "E-Mail",
+            "idInvesterRange": "Rango Inversión",
+            "idBusinessSector": "Sector Empresarial",
+            "idStartUpState": "Estado Startup"
+        },
+        "startup": {
+            "id": "id",
+            "name": "Nombre",
+            "email": "E-Mail",
+            "description": "Descripción",
+            "idInvesterRange": "Rango del inversor",
+            "idBusinessSector": "Sector Empresarial",
+            "idStartUpState": " Estado",
+            "anualInvoicing": " Facturación anual",
+            "fundationYear": " Fecha de fundación",
+            "idEntrepreneur": " Emprendedor"
+        }
+    },
+    "form": {
+        "contact": "Contacto",
+        "inversor": "Inversor",
+        "startup": "Startup"
+    },
+
+    "formUser": {
+        "username": "Nombre de usuario",
+        "name": "Nombre",
+        "firstSurname": "Primer Apellido",
+        "secondSurname": "Segundo Apellido",
+        "password": "Contraseña",
+        "repeatPassword": "Repetir Contraseña",
+        "selectProfile": "Selecciona un perfil"
+    },
+    "button": {
+        "cancel": "Cancelar",
+        "save": "Guardar"
+    },
+    "paginator": {
+        "first_page": "Primera página",
+        "last_page": "Última página",
+        "items_per_page": "Elementos por página",
+        "next_page": "Página siguiente",
+        "previous_page": "Página anterior",
+        "of": "de"
+    },
+    "EN": "Inglés",
+    "ES": "Español",
+    "GL": "Gallego",
+    "USER_NOT_EXISTS": "El usuario no existe en la base de datos",
+    "WRONG_PASSWORD": "Contraseña incorrecta",
+    "TOKEN_EXPIRED": "La sesión expiró",
+    "CONTACT_EDIT_SUCCESS": "Contacto editado",
+    "CONTACT_CREATE_SUCCESS": "Contacto creado",
+    "CONTACT_DELETE_SUCCESS": "Contacto borrado",
+    "CONTACT_NOT_EDIT": "Error al editar el contacto",
+    "CONTACT_NOT_DELETE": "Contacto no borrado",
+    "USER_EDIT_SUCCESS": "Usuario editado",
+    "CONTACT_NOT_CREATED": "Contacto no creado",
+    "NAME_REQUIRED": "Nombre obligatorio",
+    "ID_NOT_EXISTS": "Id no existe",
+    "ID_REQUIRED": "Id obligatorio",
+    "SURNAME1_REQUIRED": "Primer apellido obligatorio",
+    "SURNAME2_REQUIRED": "Segundo apellido obligatorio",
+    "PHONE_REQUIRED": "Teléfono obrigatorio",
+    "PHONE_INVALID": "Teléfono inválido",
+    "EMAIL_REQUIRED": "Email obligatorio",
+    "EMAIL_INVALID": "Email inválido",
+    "CONTACT_NOT_EXISTS": "Contacto no existe",
+    "CONTACT_ALREADY_EXISTS": "Contacto ya existe",
+    "CONTACT_CONSTRAINT_VIOLATION": "Violación de restricción de contacto",
+    "PHONE_ALREADY_EXISTS": "El teléfono ya existe",
+    "INVESTER_ID_REQUIRED": "Requiere el ID del inversor",
+    "INVESTER_NAME_REQUIRED": "Requiere el nombre del inversor",
+    "INVESTER_EMAIL_REQUIRED": "Requiere el email del inversor",
+    "INVESTER_RANGE_REQUIRED": "Requiere el rango del inversor",
+    "INVESTER_BUSINESS_SECTOR_REQUIRED": "Requiere el sector empresarial del inversor",
+    "INVESTER_STARTUP_STATE_REQUIRED": "Requiere el estado de startup del inversor",
+    "INVESTER_NOT_EXISTS": "El inversor no existe",
+    "INVESTER_ALREADY_EXISTS": "El inversor ya existe",
+    "INVESTER_CREATE_SUCCESS": "El inversor se ha creado correctamente",
+    "INVESTER_NOT_CREATED": "No se ha creado al inversor",
+    "INVESTER_EDIT_SUCCESS": "Los datos del inversor se han modificado correctamente",
+    "INVESTER_NOT_EDIT": "Los datos del inversor no se han modificado correctamente",
+    "INVESTER_DELETE_SUCCESS": "El inversor se ha eliminado correctamente",
+    "INVESTER_NOT_DELETE": "El inversor no se ha eliminado",
+    "USER_CREATE_SUCCESS": "El usario se ha creado correctamente",
+    "USER_DELETE_SUCCESS": "El usuario se ha modificado correctamente",
+    "LOGIN_REQUIRED": "El campo nombre de usuario es obligatorio",
+    "NIF_REQUIRED": "El NIF es obligatorio",
+    "PASSWORD_REQUIRED": "La Contraseña es obligatoria",
+    "LOGIN_EXISTS": "El usuario ya existe",
+    "NIF_MALFORMED": "El campo NIF no es válido",
+    "NO_SECTIONS_ACCESS": "No tiene acceso a la sección solicitada",
+    "USER_NOT_CREATED": "El usario no fue creado",
+    "STARTUP_ID_REQUIRED": "El campo ID es obligatorio",
+    "STARTUP_NAME_REQUIRED": "El campo nombre es obligatorio",
+    "STARTUP_EMAIL_REQUIRED": "El campo email es obligatorio",
+    "STARTUP_DESCRIPTION_REQUIRED": "El campo descripción es obligatorio",
+    "STARTUP_BUSINESS_SECTOR_REQUIRED": "El campo de sector empresarial es obligatorio",
+    "STARTUP_STATE_REQUIRED": "El campo estado de startup es obligatorio",
+    "STARTUP_ENTREPRENEUR_REQUIRED": "El campo del emprendedor es obligatorio",
+    "STARTUP_ANUAL_INVOICING_REQUIRED": "El campo de facturación anual es obligatorio",
+    "STARTUP_FUNDATION_YEAR_REQUIRED": "El campo año de fundación es obligatorio",
+    "STARTUP_NOT_EXISTS": "StartUp no existe",
+    "STARTUP_ALREADY_EXISTS": "La Startup ya existe",
+    "STARTUP_EMAIL_INVALID": "El email no es valido",
+    "STARTUP_CREATE_SUCCESS": "La StartUp se ha creado correctamente",
+    "STARTUP_NOT_CREATED": "La StartUp no se ha creado",
+    "STARTUP_EDIT_SUCCESS": "La StartUp se ha modificado",
+    "STARTUP_NOT_EDIT": "La StartUp no se ha modificado",
+    "STARTUP_DELETE_SUCCESS": "La StartUp se ha eliminado correctamente",
+    "STARTUP_NOT_DELETE": "La Startup no se ha eliminado",
+    "STARTUP_ID_ERROR": "Ocurrio un error con el ID de StartUp",
+    "STARTUP_EMAIL_ERROR": "Hubo un error con el email de StartUp",
+
+    "UNKNOWN_ERROR": "Error desconocido",
+    "SESSION_EXPIRED": "Sesión expirada",
+    "CLOSE": "CERRAR",
+    "filter": "Filtro",
+    "new": "Nuevo",
+    "delete": "Eliminar",
+    "refresh": "Refrescar",
+    "loading": "Cargando",
+    "no": "No",
+    "yes": "Si",
+    "delete-element-confirmation": "¿Está seguro de que quiere continuar? Todos los elementos seleccionados se eliminarán",
+    "namerequired": "El nombre es un campo obligatorio",
+    "surname1required": "El apellido es un campo obligatorio",
+    "phonerequired": "El teléfono es un campo obligatorio",
+    "phonepattern": "El formato del teléfono no es correcto",
+    "emailpattern": "El formato del email no es correcto",
+    "stadisticsline": {
+        "invoicing": "Facturación",
+        "year": "Año",
+        "legend": "Leyenda",
+        "return": "Volver"
+    },
+    "stadisticsbar": {
+        "months": "Meses",
+        "inscriptions": "Incripciones",
+        "legend": "Leyenda",
+        "return": "Volver",
+        "junuary": "Enero",
+        "february": "Febrero",
+        "march": "Marzo",
+        "april": "Abril",
+        "may": "Mayo",
+        "june": "Junio",
+        "july": "Julio",
+        "august": "Agosto",
+        "september": "Septiembre",
+        "octuber": "Octubre",
+        "november": "Noviembre",
+        "december": "Diciembre"
+    },
+    "registration": {
+        "matStepLabel1": "Datos del usuario",
+        "matStepLabel2": "Datos de StartUp/Inversor",
+        "matStepLabel3": "Acabar",
+
+        "h1-step1": "Registrarse como usuario",
+        "subtitle-step1": "Cubra los datos del usuario y selecciona un perfil",
+
+        "button-next": "Siguiente",
+        "button-back": "Atrás",
+        "button-reset": "Nuevo Registro",
+        "button-finish": "Acabar",
+
+        "h1-step2": "Regístrese como StartUp o Inversor",
+        "subtitle-step2": "Escoja un tipo de usuario y complete el formulario",
+
+        "done-messafge": "Ya ha terminado. Estes son los datos de registro:",
+
+        "done-username": "Nombre de usuario: ",
+        "done-name": "Nombre: ",
+        "done-surname": "Apellido/s: "
+    },
+    "OBLIGATORY_FIELD": "*"
+}

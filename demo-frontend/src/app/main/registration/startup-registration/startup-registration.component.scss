@@ -1,0 +1,19 @@
+$brandColor: rgb(255, 87, 51);
+
+form {
+  font-family: "Nunito", sans-serif;
+  margin-top: 2em;
+}
+label {
+  font-family: "Nunito", sans-serif;
+  letter-spacing: 1px;
+}
+
+textarea{
+ border-radius: 10px;
+}
+
+button{
+    background-color: $brandColor;
+    color: white;
+}

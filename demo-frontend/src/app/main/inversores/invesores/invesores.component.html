@@ -1,0 +1,120 @@
+<div>
+    <div fxLayout="row" fxLayoutAlign="space-between" class="upper-menu" fxLayout.lt-sm="column" fxLayoutGap="20px" fxLayoutGap.lt-sm="10px">
+        <div fxFlex fxLayout.lt-sm="row" class="k-flex-wrap">
+            <button class="button is-rounded is-link" mat-raised-button (click)="onAdd()">
+        <mat-icon>add</mat-icon> {{ "new" | translate }}
+      </button>
+            <button class="button is-rounded is-danger" mat-raised-button [disabled]="!selection.hasValue()" (click)="onDelete()">
+        <mat-icon>delete</mat-icon> {{ "delete" | translate }}
+      </button>
+            <button class="button is-rounded" mat-raised-button (click)="loadInversoresPage()">
+        <mat-icon>refresh</mat-icon> {{ "refresh" | translate }}
+      </button>
+        </div>
+        <div fxflex>
+            <mat-form-field>
+                <input matInput placeholder="" #input id="invesores-filter" name="inversores-filter" />
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="box table-responsive investorTable">
+        <table mat-table [dataSource]="dataSource" matSort matSortActive="name" matSortDirection="asc" matSortDisableClear class="table  is-fluid">
+            <!-- Checkbox Column -->
+            <ng-container matColumnDef="select">
+                <th id="header" mat-header-cell *matHeaderCellDef>
+                    <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
+                    </mat-checkbox>
+                </th>
+                <td mat-cell *matCellDef="let row">
+                    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+
+            <!-- <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    {{ "table.inversores.id" | translate }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="id">
+                    {{ row.id }}
+                </mat-cell>
+            </ng-container> -->
+
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    {{ "table.inversores.name" | translate }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="name">
+                    <span class="is-image-cell">
+            <div class="image">
+              <img src="https://avatars.dicebear.com/api/initials/{{ row.name }}.svg" class="is-rounded">
+            </div>
+          </span>
+                    <span>
+            {{ row.name }}
+          </span>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    {{ "table.inversores.email" | translate }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="email">
+                    {{ row.email }}
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="idInvesterRange">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    {{ "table.inversores.idInvesterRange" | translate }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="idInvesterRange">
+                    $ &nbsp; {{ row.idInvesterRange.value }}
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="idBusinessSector">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    {{ "table.inversores.idBusinessSector" | translate }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="idBusinessSector">
+                    {{ row.idBusinessSector.type }}
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="idStartUpState">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    {{ "table.inversores.idStartUpState" | translate }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="idStartUpState">
+                    <span>{{ row.idStartUpState.type }}
+            <progress [ngClass]="{
+            'is-success': row.idStartUpState.type === 'Scaleup',
+            'is-warning': row.idStartUpState.type === 'Seed',
+            'is-danger': row.idStartUpState.type === 'Pre-Seed',
+            'is-link': row.idStartUpState.type === 'Early Stage',
+            'is-primary': row.idStartUpState.type === 'Exit',
+            'is-info': row.idStartUpState.type === 'Growth Stage'
+          }" class="progress is-small" [value]="changeProgresValue(row.idStartUpState.type)" max="100"></progress>
+          </span>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns" (click)="onEdit(row)" class="row-link" [style.background]="
+          highlightedRow && highlightedRow.id === row.id
+            ? 'rgba(0, 0, 0, 0.15)'
+            : ''
+        ">
+            </mat-row>
+        </table>
+
+        <mat-card *ngIf="dataSource.loading$ | async" style="display: flex; justify-content: center; align-items: center">
+            <mat-spinner></mat-spinner>
+        </mat-card>
+
+        <mat-paginator [length]="dataSource.totalElements" [pageSize]="20" [pageSizeOptions]="[10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+</div>

@@ -1,0 +1,146 @@
+// https://material.angular.io/guide/theming-your-components
+.mat-sidenav-container {
+    height: 100%;
+    background: none;
+    //background-image: url(../../../../assets/images/landing-page.jpg);
+}
+
+.toolbar-title {
+    margin: 0 16px 0 16px;
+}
+
+.mat-subheader {
+    font-size: 18px;
+    font-weight: 900;
+}
+
+mat-sidenav {
+    font-family: "Poppins", sans-serif;
+    margin: 16px;
+    width: max-content;
+    height: fit-content;
+    border-right: none;
+    background: #1e1e1e;
+    color: lightgray;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.content {
+    font-family: "Poppins", sans-serif;
+    height: fit-content;
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+    padding: 16px;
+    overflow: auto;
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 65px);
+}
+
+// .color-back {
+//     background-color: #224d74;
+// }
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+    font-weight: 300;
+    justify-content: flex-start;
+    font-family: "Poppins", sans-serif;
+    color: lightgray;
+    mat-icon {
+        margin-right: 8px;
+    }
+}
+
+.avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.name {
+    margin-top: 8px;
+    font-weight: normal;
+}
+
+.designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: lightgrey;
+}
+
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.logo {
+    color: white;
+    font-size: 35px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.up {
+    color: rgb(255, 87, 51);
+}
+
+span,
+h2,
+.up,
+strong {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+h2 {
+    margin-left: 0.5rem;
+}
+
+a:hover {
+    color: rgb(255, 87, 51);
+}
+
+a:active {
+    color: rgb(255, 87, 51);
+}
+
+.navigation-items {
+    list-style: none;
+    align-content: center;
+    margin: 0;
+    cursor: pointer;
+}
+
+strong {
+    text-align: center;
+    margin-left: 1rem;
+}
+
+p {
+    font-weight: 300;
+}
+
+.list-item-active {
+    font-weight: bold;
+    color: rgb(255, 87, 51) !important;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 10px;
+}
+
+.logout-menu,
+.language-menu {
+    font-family: "Poppins", sans-serif;
+}
+
+.span-logout:hover {
+    color: red;
+    font-weight: bold;
+}

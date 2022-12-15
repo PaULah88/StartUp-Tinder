@@ -1,0 +1,43 @@
+<div class="header">
+
+    <h1 class="register-title">{{'landing.content.h4' | translate}}</h1>
+    <div class="header-a">
+        <a id="btn-language" mat-menu-item (click)="toogleLanguage('es')">
+            <span>{{ 'landing.sp' | translate }}&nbsp;&nbsp;&#124;</span>
+        </a>
+        <a id="btn-language" mat-menu-item (click)="toogleLanguage('gl')">
+            <span>{{ 'landing.gl' | translate }}&nbsp;&nbsp;&#124;</span>
+        </a>
+        <a id="btn-language" mat-menu-item (click)="toogleLanguage('en')">
+            <span>{{ 'landing.en' | translate }}</span>
+        </a>
+    </div>
+
+</div>
+<div class="register-container">
+
+    <div class="register-card" (click)="openDialogStartup()">
+        <figure class="hover-img">
+            <img class="register-img" src="../../../assets/images/startup-home.jpg" alt="startup">
+            <figcaption>
+                <h3>{{'landing.service.startup.h5' | translate}}</h3>
+            </figcaption>
+
+        </figure>
+
+    </div>
+
+
+
+    <div class="register-card" (click)="openDialogInversor()">
+        <figure class="hover-img">
+            <img class="register-img" src="../../../assets/images/investor-home.jpg" alt="inversor">
+            <figcaption>
+                <h3>{{'landing.service.investor.h5' | translate}}</h3>
+            </figcaption>
+
+        </figure>
+
+
+    </div>
+</div>

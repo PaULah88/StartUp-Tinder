@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StartUp!</title>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+</head>
+
+<body>
+
+    <!----hero Section start---->
+
+    <div class="hero">
+        <nav>
+            <h2 class="logo">Start<span>Up</span>!</h2>
+            <ul>
+
+                <li>
+                    <a (click)="onClick('about')">{{ 'landing.aboutus' | translate}}</a>
+                </li>
+                <li>
+                    <a (click)="onClick('services')">{{ 'landing.services' | translate}}</a>
+                </li>
+                <li>
+                    <a (click)="onClick('social')">{{ 'landing.contact' | translate }}</a>
+                </li>
+            </ul>
+
+
+            <li>
+                <a id="btn-language" mat-menu-item (click)="toogleLanguage('es')">
+                    <span>{{ 'landing.sp' | translate }}</span>
+                </a>
+                <a id="btn-language" mat-menu-item (click)="toogleLanguage('gl')">
+                    <span>{{ 'landing.gl' | translate }}</span>
+                </a>
+                <a id="btn-language" mat-menu-item (click)="toogleLanguage('en')">
+                    <span>{{ 'landing.en' | translate }}</span>
+                </a>
+
+            </li>
+            <a href="/login" class="btn">{{ 'landing.loger' | translate }}</a>
+            <a (click)="openDialogUser()" class="btn">{{ 'landing.register' | translate }}</a>
+        </nav>
+
+        <div class="content">
+            <h4>{{'landing.content.h4' | translate}}</h4>
+            <h1>{{'landing.content.h1' | translate }} <span>{{'landing.content.span' | translate }}</span></h1>
+            <h3>{{'landing.content.h3' | translate}}</h3>
+
+        </div>
+    </div>
+
+    <!----About section start---->
+    <section class="about">
+        <div class="main" id="about">
+            <img src="../../assets/images/landing-page1.jpg">
+            <div class="about-text">
+                <h2>{{'landing.about.h2' | translate}}</h2>
+                <h5>{{'landing.about.h5' | translate}} <span>{{'landing.about.span' | translate}}</span></h5>
+                <p>{{'landing.about.p' | translate}}</p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-----service section start----------->
+    <div id="services" class="service">
+        <div class="title">
+            <h2>{{'landing.service.h2' | translate}}</h2>
+        </div>
+
+        <div class="box-landing">
+            <div class="card-landing">
+                <i class="fas fa-rocket"></i>
+                <h5>{{'landing.service.startup.h5' | translate}}</h5>
+                <div class="pra-landing">
+                    <p>{{'landing.service.startup.p' | translate}}</p>
+
+                    <p style="text-align: center;">
+                        <a class="button" href="/login">{{'landing.service.startup.a' | translate}}</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card-landing">
+                <i class="fas fa-hand-holding-usd"></i>
+                <h5>{{'landing.service.investor.h5' | translate}}</h5>
+                <div class="pra-landing">
+                    <p>{{'landing.service.investor.p' | translate}}</p>
+
+                    <p style="text-align: center;">
+                        <a class="button" href="/login">{{'landing.service.investor.a' | translate}}</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card-landing">
+                <i class="fas fa-users"></i>
+                <h5>{{'landing.service.entrepreneur.h5' | translate}}</h5>
+                <div class="pra-landing">
+                    <p>{{'landing.service.entrepreneur.p' | translate}}</p>
+
+                    <p style="text-align: center;">
+                        <a class="button" href="/login">{{'landing.service.entrepreneur.a' | translate}}</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------Contact Me------>
+    <div class="contact-me">
+        <p>{{'landing.slogan' | translate}}</p>
+    </div>
+
+    <!------footer start--------->
+    <footer>
+        <p>{{'landing.footer.title' | translate}}</p>
+        <p>{{'landing.footer.p' | translate}}</p>
+        <div class="social" id="social">
+            <a href="https://www.linkedin.com"><i class="bi bi-linkedin " aria-hidden="true "></i></a>
+            <a href="https://www.google.com/gmail/"><i class="bi bi-envelope"></i></a>
+            <a href="https://www.whatsapp.com/"><i class="bi bi-chat-left-text"></i></a>
+        </div>
+        <p class="end">{{'landing.footer.end' | translate}}</p>
+    </footer>
+</body>
+
+</html>
